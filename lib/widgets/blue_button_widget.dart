@@ -12,21 +12,26 @@ class BlueButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+
+    return ElevatedButton(      
       style: ButtonStyle(
         elevation: MaterialStateProperty.all(2.0),
-        backgroundColor: MaterialStateProperty.all(Colors.blue),
+        // backgroundColor: MaterialStateProperty.resolveAs(value, states),
+        // backgroundColor: MaterialStateProperty.all(Colors.blue),
+        // overlayColor: MaterialStateProperty.all(Colors.grey),
         shape: MaterialStateProperty.all(StadiumBorder()),
       ),
       onPressed: this.onPressed,
+      // onPressed: null,
       child: Container(
         width: double.infinity,
         height: 55,
         child: Center(
-            child: Text(
-          'Log in',
+          child: Text(
+          text,
           style: TextStyle(fontSize: 17),
-        )),
+          )
+        ),
       ),
     );
   }
